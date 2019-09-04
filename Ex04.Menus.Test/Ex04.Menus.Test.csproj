@@ -35,5 +35,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj">
+      <Project>{F4DF601A-D96E-499B-B00A-AD3F3523DEFA}</Project>
+      <Name>Ex04.Menus.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CountSpacesAction.cs" />
+    <Compile Include="InterfaceMenuTest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ShowDateAction.cs" />
+    <Compile Include="ShowTimeAction.cs" />
+    <Compile Include="ShowVersionAction.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

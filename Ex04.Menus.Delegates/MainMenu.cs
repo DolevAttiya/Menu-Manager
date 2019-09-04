@@ -19,6 +19,7 @@ namespace Ex04.Menus.Delegates
         public void Show()
         {
             m_MenuList.MenuDisplay();
+
         }
     }
 }
