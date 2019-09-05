@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
@@ -12,23 +8,22 @@ namespace Ex04.Menus.Test
         public void Perform()
         {
             int amountOfSpaces = 0;
-            Console.WriteLine("Please enter a sentence:");
-            string sentence = Console.ReadLine();
+            string inputString;
 
-            foreach (char c in sentence)
+            Console.WriteLine("Please enter a sentence To search for Spaces:");
+            inputString = Console.ReadLine();
+            foreach (char charInString in inputString)
             {
-                if (char.IsWhiteSpace(c))
+                if (char.IsWhiteSpace(charInString))
                 {
                     amountOfSpaces++;
                 }
             }
 
-            string message = string.Format(
+            Console.WriteLine(
 @"There are {0} Spaces in the sentence
-Press any key to continue...", 
+Press any key to continue...",
 amountOfSpaces);
-
-            Console.WriteLine(message);
             Console.ReadLine();       
         }
     }

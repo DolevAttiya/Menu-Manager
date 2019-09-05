@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
@@ -11,12 +7,11 @@ namespace Ex04.Menus.Test
     {
         public void Perform()
         {
-            string ver = "19.3.4.42";
-            string versionMessage = string.Format(
-@"Version: {0}
-Press any key to continue...", ver);
+            string version = "19.3.4.42";
 
-            Console.WriteLine(versionMessage);
+            Console.WriteLine(
+@"Version: {0}
+Press any key to continue...", version);
             Console.ReadLine();
         }
     }

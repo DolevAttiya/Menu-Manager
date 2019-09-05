@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex04.Menus.Delegates
 {
-    class HierarchicalMenu : MenuItem
+    public class HierarchicalMenu : MenuItem
     {
         private const string k_GoToUpperMenuTitle = "Back";
         private const int k_GoToUpperMenuIndex = 0;

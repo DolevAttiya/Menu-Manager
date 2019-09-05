@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Ex04.Menus.Delegates
 {
-    class MenuItem
+    public class MenuItem
     {
         public delegate void ActionDelegate();
         public event ActionDelegate SelectedItemsEventHandler;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ex04.Menus.Delegates
 {
-    class MainMenu
+    public class MainMenu
     {
         private const string k_ExitrMenuTitle = "Exit";
         private const int k_ExitrMenuIndex = 0;
@@ -20,6 +20,10 @@ namespace Ex04.Menus.Delegates
         {
             m_MenuList.MenuDisplay();
 
+        }
+        public void AttachNewItem(MenuItem i_ItemToAdd)
+        {
+            m_MenuList.AddItemToList(i_ItemToAdd);
         }
     }
 }
