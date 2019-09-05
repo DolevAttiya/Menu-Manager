@@ -39,6 +39,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus.Delegates\Ex04.Menus.Delegates.csproj">
+      <Project>{d921c9e7-0a38-43e3-960e-562742532c17}</Project>
+      <Name>Ex04.Menus.Delegates</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj">
       <Project>{F4DF601A-D96E-499B-B00A-AD3F3523DEFA}</Project>
       <Name>Ex04.Menus.Interfaces</Name>
@@ -47,6 +51,7 @@
   <ItemGroup>
     <Compile Include="CountSpacesAction.cs" />
     <Compile Include="InterfaceMenuTest.cs" />
+    <Compile Include="MenuTestDelegates.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ShowDateAction.cs" />
     <Compile Include="ShowTimeAction.cs" />
