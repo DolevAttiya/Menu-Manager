@@ -29,8 +29,16 @@ namespace Ex04.Menus.Delegates
             AttachedItems.Add(i_ItemToAttach);
         }
 
-        private void printMenuCurrentItemList()
+        private void printMenuList()
         {
+            Console.Clear();
+            Console.WriteLine(this.Topic);
+            foreach (char underLinePrinter in this.Topic)
+            {
+                Console.Write("═");
+
+            }
+            Console.WriteLine(Environment.NewLine);
             foreach (MenuItem itemToPrint in AttachedItems)
             {
                 Console.WriteLine("{0}. {1}", itemToPrint.PlaceOfItem, itemToPrint.Topic);
@@ -41,9 +49,9 @@ namespace Ex04.Menus.Delegates
         {
             string userInput;
 
-            Console.WriteLine("Please pick your one of the following selections by number (Press 0 to Exit/Back):");
+            Console.WriteLine("Please pick your one of the following selections by number Press 0 to Exit or to go Back :");
             userInput = Console.ReadLine();
-            while (!int.TryParse(userInput, out userSelectedChoice) && (userSelectedChoice > AttachedItems.Count - 1 || userSelectedChoice < 0))
+            while (!int.TryParse(userInput, out userSelectedChoice) || userSelectedChoice > AttachedItems.Count - 1 || userSelectedChoice < 0)
             {
                 Console.WriteLine("Invalid Input.Please pick your one of the following selections by number 0 to {0}:", AttachedItems.Count - 1);
                 userInput = Console.ReadLine();
@@ -54,8 +62,7 @@ namespace Ex04.Menus.Delegates
         {
             int userSelectedChoice;
 
-            Console.Clear();
-            Console.WriteLine(this.Topic);
+            printMenuList();
             getUserSelectedChoice(out userSelectedChoice);
             while (userSelectedChoice!= k_GoToUpperMenuIndex)
             {
@@ -71,8 +78,7 @@ namespace Ex04.Menus.Delegates
                     choosenMenu.MenuDisplay();
                 }
 
-                Console.Clear();
-                Console.WriteLine(this.Topic);
+                printMenuList();
                 getUserSelectedChoice(out userSelectedChoice);
             }
         }      
