@@ -8,19 +8,19 @@ namespace Ex04.Menus.Interfaces
 {
     public abstract class MenuItem
     {
-        private string m_ItemTitle;
-        private int m_ItemIndex = 0;
+        private string m_Topic;
+        private int m_PlaceOfItem = 0;
        
-        public int ItemIndex
+        public int PlaceOfItem
         {
-            get { return m_ItemIndex; }
-            set { m_ItemIndex = value; }
+            get { return m_PlaceOfItem; }
+            set { m_PlaceOfItem = value; }
         }
 
-        public string Title
+        public string Topic
         {
-            get { return m_ItemTitle; }
-            set { m_ItemTitle = value; }
+            get { return m_Topic; }
+            set { m_Topic = value; }
         }
 
         public abstract void Show();

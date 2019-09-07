@@ -5,7 +5,7 @@ namespace Ex04.Menus.Delegates
 {
     public class HierarchicalMenu : MenuItem
     {
-        private const string k_GoToUpperMenuTitle = "Back";
+        private const string k_GoToUpperMenuTopic = "Back";
         private const int k_GoToUpperMenuIndex = 0;
         private readonly List<MenuItem> r_AttachedItems;
 
@@ -15,7 +15,7 @@ namespace Ex04.Menus.Delegates
             r_AttachedItems = new List<MenuItem>();
             MenuItem GoBackMenu = new MenuItem();
             AttachedItems.Add(GoBackMenu);
-            AttachedItems[k_GoToUpperMenuIndex].Topic = k_GoToUpperMenuTitle;
+            AttachedItems[k_GoToUpperMenuIndex].Topic = k_GoToUpperMenuTopic;
         }
 
         public List<MenuItem> AttachedItems

@@ -3,25 +3,27 @@
     public class MainMenu
     {
         private const int k_ExitItemIndex = 0;
-        private const string k_ExitItemTitle = "Exit";
-        private SubMenu m_MainMenu;
+        private const string k_ExitItemTopic = "Exit";
+        private HierarchicalMenu m_MenuList;
 
-        public MainMenu(string i_MenuTitle)
+        public MainMenu(string i_MenuTopic)
         {
-            m_MainMenu = new SubMenu(i_MenuTitle);
+            m_MenuList = new HierarchicalMenu(i_MenuTopic);
             MenuAction exitItem = new MenuAction();
-            m_MainMenu.ItemList.Add(exitItem);
-            m_MainMenu.ItemList[k_ExitItemIndex].Title = k_ExitItemTitle;
-        }
-
-        public void AddMenuItem(MenuItem i_ItemToAdd)
-        {
-            m_MainMenu.AddMenuItem(i_ItemToAdd);
+            m_MenuList.AttachedItems.Add(exitItem);
+            m_MenuList.AttachedItems[k_ExitItemIndex].Topic = k_ExitItemTopic;
         }
 
         public void Show()
         {
-            m_MainMenu.Show();
+            m_MenuList.Show();
         }
+
+        public void AttachNewItem(MenuItem i_ItemToAdd)
+        {
+            m_MenuList.AddItemToList(i_ItemToAdd);
+        }
+
+      
     }
 }

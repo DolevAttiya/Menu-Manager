@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountSpacesAction.cs" />
-    <Compile Include="InterfaceMenuTest.cs" />
+    <Compile Include="MenuTestInterface.cs" />
     <Compile Include="MenuTestDelegates.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ShowDateAction.cs" />

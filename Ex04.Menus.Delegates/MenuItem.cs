@@ -8,9 +8,9 @@ namespace Ex04.Menus.Delegates
         private string m_Topic;
         private int m_PlaceOfItem = 0;
 
-        public MenuItem(string i_TitleToAdd, ActionDelegate i_ActionToPerform)
+        public MenuItem(string i_TopicToAdd, ActionDelegate i_ActionToPerform)
         {
-            Topic = i_TitleToAdd;
+            Topic = i_TopicToAdd;
             SelectedItemsEventHandler += i_ActionToPerform;
         }
 

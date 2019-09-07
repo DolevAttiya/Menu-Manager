@@ -8,8 +8,8 @@ namespace Ex04.Menus.Interfaces
 {
     public interface INewMenu : IMenuItem
     {
-        INewMenu AddMenu(string i_MenuTitle);
+        INewMenu AddMenu(string i_MenuTopic);
 
-        void AddItemToMenu(string i_MenuItemTitle, IMenuAction i_ActionToPerform);
+        void AddItemToMenu(string i_MenuItemTopic, IMenuAction i_ActionToPerform);
     }
 }

@@ -15,9 +15,9 @@ namespace Ex04.Menus.Interfaces
             m_ActionToPerform = null;
         }
 
-        public MenuAction(string i_ActionTitle, IMenuAction i_ActionToPerform)
+        public MenuAction(string i_ActionTopic, IMenuAction i_ActionToPerform)
         {
-            Title = i_ActionTitle;
+            Topic = i_ActionTopic;
             ActionToPerform = i_ActionToPerform;
         }
 

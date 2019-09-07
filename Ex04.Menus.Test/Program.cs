@@ -4,8 +4,8 @@
     {
         public static void Main()
         {
-            InterfaceMenuTest interfaceMenu = new InterfaceMenuTest();
-            interfaceMenu.RunInterfaceMenu();
+            MenuTestInterface interfaceMenu = new MenuTestInterface();
+            interfaceMenu.InterfaceMenuRun();
 
             MenuTestDelegates menuDelegates = new MenuTestDelegates();
             menuDelegates.MenuDelegatesRun();
