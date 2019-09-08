@@ -8,8 +8,8 @@ namespace Ex04.Menus.Test
         public void Perform()
         {
             Console.WriteLine(
-@"The time now is: {0:hh:mm:ss tt}
-Press any key to continue...",
+@"The current time is: {0:hh:mm:ss tt}
+Press Enter to continue",
 DateTime.Now);
             Console.ReadLine();
         }

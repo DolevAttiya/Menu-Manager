@@ -22,7 +22,7 @@ namespace Ex04.Menus.Test
 
             Console.WriteLine(
 @"There are {0} Spaces in the sentence
-Press any key to continue...",
+Press Enter to continue",
 amountOfSpaces);
             Console.ReadLine();       
         }

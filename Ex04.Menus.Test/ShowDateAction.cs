@@ -8,8 +8,8 @@ namespace Ex04.Menus.Test
         public void Perform()
         {
             Console.WriteLine(
-@"The date is: {0}
-Press any key to continue...",
+@"The Current Date is: {0}
+Press Enter To Continue",
 DateTime.Now.ToShortDateString());
             Console.ReadLine();
         }

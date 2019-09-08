@@ -7,11 +7,12 @@ namespace Ex04.Menus.Test
     {
         public void Perform()
         {
-            string version = "19.3.4.42";
+            string shownVersion = "19.3.4.42";
 
             Console.WriteLine(
 @"Version: {0}
-Press any key to continue...", version);
+Press Enter to continue",
+shownVersion);
             Console.ReadLine();
         }
     }
