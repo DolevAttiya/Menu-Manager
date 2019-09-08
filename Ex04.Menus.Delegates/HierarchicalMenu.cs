@@ -31,14 +31,6 @@ namespace Ex04.Menus.Delegates
 
         private void printMenuList()
         {
-            Console.Clear();
-            Console.WriteLine(this.Topic);
-            foreach (char underLinePrinter in this.Topic)
-            {
-                Console.Write("═");
-
-            }
-            Console.WriteLine(Environment.NewLine);
             foreach (MenuItem itemToPrint in AttachedItems)
             {
                 Console.WriteLine("{0}. {1}", itemToPrint.PlaceOfItem, itemToPrint.Topic);
@@ -48,12 +40,15 @@ namespace Ex04.Menus.Delegates
         private void getUserSelectedChoice(out int userSelectedChoice)
         {
             string userInput;
-
+            
             Console.WriteLine("Please pick your one of the following selections by number Press 0 to Exit or to go Back :");
+            printMenuList();
             userInput = Console.ReadLine();
             while (!int.TryParse(userInput, out userSelectedChoice) || userSelectedChoice > AttachedItems.Count - 1 || userSelectedChoice < 0)
             {
                 Console.WriteLine("Invalid Input.Please pick your one of the following selections by number 0 to {0}:", AttachedItems.Count - 1);
+                printMenuList();
+
                 userInput = Console.ReadLine();
             }
         }
@@ -62,25 +57,30 @@ namespace Ex04.Menus.Delegates
         {
             int userSelectedChoice;
 
-            printMenuList();
-            getUserSelectedChoice(out userSelectedChoice);
-            while (userSelectedChoice!= k_GoToUpperMenuIndex)
+            do
             {
+                Console.Clear();
+                Console.WriteLine(this.Topic);
+                foreach (char underLinePrinter in this.Topic)
+                {
+                    Console.Write("═");
+                }
+
+                Console.WriteLine(Environment.NewLine);
+                getUserSelectedChoice(out userSelectedChoice);
                 HierarchicalMenu choosenMenu = r_AttachedItems[userSelectedChoice] as HierarchicalMenu;
 
+                Console.Clear();
                 if (choosenMenu == null)
                 {
                     AttachedItems[userSelectedChoice].DoAction();
-                    
                 }
                 else
                 {
                     choosenMenu.MenuDisplay();
                 }
-
-                printMenuList();
-                getUserSelectedChoice(out userSelectedChoice);
             }
+            while (userSelectedChoice != k_GoToUpperMenuIndex);
         }      
     }
 }

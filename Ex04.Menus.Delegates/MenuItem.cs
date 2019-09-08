@@ -1,10 +1,13 @@
 ﻿using System;
+
 namespace Ex04.Menus.Delegates
 {
     public class MenuItem
     {
         public delegate void ActionDelegate();
+
         public event ActionDelegate SelectedItemsEventHandler;
+
         private string m_Topic;
         private int m_PlaceOfItem = 0;
 
@@ -38,6 +41,7 @@ namespace Ex04.Menus.Delegates
             {
                 return m_Topic;
             }
+
             set
             {
                 m_Topic = value;
@@ -50,11 +54,11 @@ namespace Ex04.Menus.Delegates
             {
                 return m_PlaceOfItem;
             }
+
             set
             {
                 m_PlaceOfItem = value;
             }
         }
     }
-
 }

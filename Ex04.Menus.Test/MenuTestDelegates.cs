@@ -2,7 +2,7 @@
 
 namespace Ex04.Menus.Test
 {
-    class MenuTestDelegates
+   internal class MenuTestDelegates
     {
         private MainMenu m_MainMenu;
 
@@ -21,7 +21,6 @@ namespace Ex04.Menus.Test
             m_MainMenu.AttachNewItem(showVersionOrDighitsMenu);
 
             m_MainMenu.Show();
-
         }
     }
 }

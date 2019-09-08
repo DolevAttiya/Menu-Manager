@@ -1,6 +1,6 @@
 ﻿namespace Ex04.Menus.Test
 {
-    class Program
+    internal class Program
     {
         public static void Main()
         {
@@ -9,7 +9,6 @@
 
             MenuTestDelegates menuDelegates = new MenuTestDelegates();
             menuDelegates.MenuDelegatesRun();
-
         }
     }
 }

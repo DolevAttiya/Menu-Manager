@@ -10,13 +10,15 @@ namespace Ex04.Menus.Interfaces
     {
         private const int k_GoToUpperMenuIndex = 0;
         private const string k_GoToUpperMenuTopic = "Back";
-        private const string k_Separator = "###################################";
         private readonly List<MenuItem> r_AttachedItems;
 
         public HierarchicalMenu(string i_Topic)
         {
             r_AttachedItems = new List<MenuItem>();
             Topic = i_Topic;
+            MenuAction backItem = new MenuAction();
+            AttachedItems.Add(backItem);
+            AttachedItems[k_GoToUpperMenuIndex].Topic = k_GoToUpperMenuTopic;
         }
 
         public List<MenuItem> AttachedItems
@@ -26,28 +28,15 @@ namespace Ex04.Menus.Interfaces
 
         public void AddItemToList(MenuItem i_ItemToAdd)
         {
-            bool isFirstItem = AttachedItems.Count == 0;
-
-            if (isFirstItem)
-            {
-                MenuAction backItem = new MenuAction();
-                AttachedItems.Add(backItem);
-                AttachedItems[k_GoToUpperMenuIndex].Topic = k_GoToUpperMenuTopic;
-            }
-
             i_ItemToAdd.PlaceOfItem = AttachedItems.Count;
             AttachedItems.Add(i_ItemToAdd);
         }
 
         private void printMenuList()
         {
-            string itemListToPrint = string.Format("{0}. {1}", AttachedItems[0].PlaceOfItem, AttachedItems[0].Topic);
-            Console.WriteLine(itemListToPrint);
-
-            for (int i = 1; i < AttachedItems.Count; i++)
+            foreach (MenuItem itemToPrint in AttachedItems)
             {
-                itemListToPrint = string.Format("{0}. {1}", AttachedItems[i].PlaceOfItem, AttachedItems[i].Topic);
-                Console.WriteLine(itemListToPrint);
+                Console.WriteLine("{0}. {1}", itemToPrint.PlaceOfItem, itemToPrint.Topic);
             }
         }
 
@@ -58,8 +47,13 @@ namespace Ex04.Menus.Interfaces
             do
             {
                 Console.WriteLine(Topic);
-                Console.WriteLine(k_Separator);
-                Console.WriteLine("Choose one options:");
+                foreach (char underLinePrinter in this.Topic)
+                {
+                    Console.Write("═");
+                }
+
+                Console.WriteLine(Environment.NewLine);
+                Console.WriteLine("Please pick your one of the following selections by number Press 0 to Exit or to go Back :");
                 printMenuList();
                 userChoice = getUserSelectedChoice();
                 Console.Clear();
@@ -79,7 +73,8 @@ namespace Ex04.Menus.Interfaces
             while (!int.TryParse(userChoiceByString, out userChoice) ||
                 (userChoice < 0 || userChoice > AttachedItems.Count - 1))
             {
-                Console.WriteLine("Invalid Input. Please enter number in range (of the above options):");
+                Console.WriteLine("Invalid Input.Please pick your one of the following selections by number 0 to {0}:", AttachedItems.Count - 1);
+                printMenuList();
                 userChoiceByString = Console.ReadLine();
             }
 

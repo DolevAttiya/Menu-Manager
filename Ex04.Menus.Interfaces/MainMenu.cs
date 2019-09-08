@@ -9,8 +9,6 @@
         public MainMenu(string i_MenuTopic)
         {
             m_MenuList = new HierarchicalMenu(i_MenuTopic);
-            MenuAction exitItem = new MenuAction();
-            m_MenuList.AttachedItems.Add(exitItem);
             m_MenuList.AttachedItems[k_ExitItemIndex].Topic = k_ExitItemTopic;
         }
 
@@ -23,7 +21,5 @@
         {
             m_MenuList.AddItemToList(i_ItemToAdd);
         }
-
-      
     }
 }

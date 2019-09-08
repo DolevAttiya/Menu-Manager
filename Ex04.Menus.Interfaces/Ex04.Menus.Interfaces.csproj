@@ -43,8 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMenuAction.cs" />
-    <Compile Include="IMenuItem.cs" />
-    <Compile Include="INewMenu.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MenuAction.cs" />
     <Compile Include="MenuItem.cs" />

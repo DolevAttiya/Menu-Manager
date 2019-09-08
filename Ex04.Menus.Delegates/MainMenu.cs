@@ -11,16 +11,15 @@ namespace Ex04.Menus.Delegates
 
         public MainMenu(string i_MenuListTopic)
         {
-            MenuItem exitTheMenu = new MenuItem();
-
             m_MenuList = new HierarchicalMenu(i_MenuListTopic);
             m_MenuList.AttachedItems[k_ExitrMenuIndex].Topic = k_ExitrMenuTopic;
         }
+
         public void Show()
         {
             m_MenuList.MenuDisplay();
-
         }
+
         public void AttachNewItem(MenuItem i_ItemToAdd)
         {
             m_MenuList.AddItemToList(i_ItemToAdd);
